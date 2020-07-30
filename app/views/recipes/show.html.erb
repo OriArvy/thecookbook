@@ -1,0 +1,9 @@
+<h1>This is a recipe</h1>
+<%= @recipe.name %>
+<br>
+<%= @recipe.description %>
+<br>
+
+<%= link_to "Edit", edit_recipe_path, class: "btn btn-primary" %>
+<%= link_to "Back", root_path, class: "btn btn-primary"  %>
+<%= link_to "Delete", recipe_path, method: :delete, class: "btn btn-primary"  %>
