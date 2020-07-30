@@ -1,10 +1,7 @@
-<div class = panel-body>
   <h1>New Recipe</h1>
     <%= simple_form_for @recipe do |f| %>
-      <%= f.input :name, class: 'form-control' %>
-      <%= f.input :description, class: 'form-control' %>
+      <%= f.input :name %>
+      <%= f.input :description %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
-
     <%= link_to "Back", root_path %>
-</div>
