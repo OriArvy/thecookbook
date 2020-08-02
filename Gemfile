@@ -16,6 +16,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bootstrap', '~> 4.5.0'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
