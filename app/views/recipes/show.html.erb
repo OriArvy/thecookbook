@@ -3,6 +3,10 @@
 <br>
 <%= @recipe.description %>
 <br>
+<% if @recipe.photo.attached? %>
+  <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+<br>
 
 <%= link_to "Edit", edit_recipe_path, class: "btn btn-primary" %>
 <%= link_to "Back", root_path, class: "btn btn-primary"  %>
