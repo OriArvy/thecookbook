@@ -1,0 +1,7 @@
+#ingredients, #instructions {
+  background: white;
+  @include box-shadow;
+  min-height: 360px;
+  border-radius: 5px;
+  padding: 2em 8%;
+}

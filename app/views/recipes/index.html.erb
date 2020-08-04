@@ -1,5 +1,13 @@
-<h1>Hello</h1>
-<%= link_to "New Recipe", new_recipe_path, class: "btn btn-primary" %>
+<div class="container">
+<div class="cards">
 <% @recipes.each do |recipe| %>
- <%= link_to recipe.name, recipe %>
+  <div class="card-category">
+    <div class="image-wrapper">
+    <%= link_to cl_image_tag(recipe.photo.key, height: 250, width: 400), recipe_path(recipe) %>
+    </div>
+    <h2> <%=  link_to recipe.name, recipe %></h2>
+  </div>
 <% end %>
+</div>
+<%= link_to "New Recipe", new_recipe_path, class: "btn btn-primary" %>
+</div>

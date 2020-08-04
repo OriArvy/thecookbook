@@ -33,6 +33,8 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    @recipe.instructions.destroy_all
+    @recipe.ingredients.destroy_all
     @recipe.delete
     redirect_to recipes_path
   end
