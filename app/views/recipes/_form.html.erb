@@ -1,0 +1,37 @@
+<%= simple_form_for @recipe do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
+      <div class="row">
+
+        <div class="col-md-6">
+          <div id="ingredients">
+          <h3>Ingredients</h3>
+            <%= f.simple_fields_for :ingredients do |ingredient| %>
+            <%= render "ingredient_fields", :f => ingredient %>
+            <% end %>
+              <div class="ingredients">
+                <%= link_to_add_association 'Add ingredient', f, :ingredients, class: "btn btn-success" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div id="instructions">
+          <h3>Instructions</h3>
+            <%= f.simple_fields_for :instructions do |instruction| %>
+            <%= render "instruction_fields", :f => instruction %>
+            <% end %>
+            <div class="instructions">
+            <%= link_to_add_association 'Add instruction', f, :instructions, class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-12">
+      <%= f.button :submit, class: "btn btn-primary mr-3" %>
+    <% end %>
+      <%= link_to "Back", root_path, class: "btn btn-primary" %>
+      </div>
+    </div>
