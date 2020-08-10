@@ -14,7 +14,11 @@ require("cocoon")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-require ("jquery")
-//= require jquery_ujs
+global.$ = jQuery;
+
 import "bootstrap";
 import "./src/application.scss"
+
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
