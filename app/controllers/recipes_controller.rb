@@ -1,19 +1,24 @@
 class RecipesController < ApplicationController
   before_action :find_recipe, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @recipes = Recipe.all
   end
 
   def show
+    @reviews = Review.where(recipe_id: @recipe.id)
+    @user = current_user
   end
 
   def new
     @recipe = Recipe.new
+    @user = current_user
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @user = current_user
+    @recipe.user = @user
     if @recipe.save
       redirect_to recipe_path(@recipe)
     else
