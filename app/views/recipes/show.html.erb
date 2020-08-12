@@ -65,7 +65,7 @@
 
   <div class="row">
     <div class="col-md-12 mb-5">
-      <% if current_user.id == @recipe.user_id %>
+      <% if user_signed_in? && current_user.id == @recipe.user_id %>
       <%= link_to "Edit", edit_recipe_path, class: "btn btn-primary" %>
       <%= link_to "Delete", recipe_path, method: :delete, class: "btn btn-primary mr-3 ml-3"  %>
       <% else %>
