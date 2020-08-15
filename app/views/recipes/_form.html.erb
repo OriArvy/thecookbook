@@ -1,7 +1,8 @@
 <%= simple_form_for @recipe do |f| %>
       <%= f.input :name %>
       <%= f.input :description %>
-      <%= f.input :photo, as: :file %>
+      <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+      <%= f.input :photo, as: :file, input_html: { class: 'd-none', id: "photo-input" }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo'  %>
       <div class="row">
 
         <div class="col-md-6">
