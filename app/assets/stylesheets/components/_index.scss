@@ -1,9 +1,11 @@
 @import "cards";
 @import "forms";
 @import "recipe_show_page";
+@import "navbar";
 
 body {
   background-color: #e5eaf5 !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 i.fas {
